@@ -462,7 +462,6 @@ namespace MadhavTilesBill
             if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 32 || e.KeyChar == 8)
             {
                 e.Handled = false;
-                
             }
             else
             {
@@ -479,15 +478,25 @@ namespace MadhavTilesBill
                 //int i = totalvalue - receivedvalue;
                 if (totalvalue < receivedvalue)
                 {
-                    MessageBox.Show("Received Value Grater Then Total Amount");
+                    MessageBox.Show("Received Value Grater Then Total Amount", "GraterThen Value", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtreceived.Text = "";
+                    txtpending.Text = "";
                     txtreceived.Focus();
+                }
+                else if (txttotal.Text != "" && txtreceived.Text != "")
+                {
+                    float total = float.Parse(txttotal.Text) - float.Parse(txtreceived.Text);
+                    txtpending.Text = total.ToString();
                 }
             }
             else if (txtreceived.Text == "")
             {
                 txtreceived.Text = "";
+                txtpending.Text = "";
             }
 
+
+            
         }
 
         
@@ -556,6 +565,59 @@ namespace MadhavTilesBill
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtqtyinbox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtqtyinbox.Text != "")
+                {
+                    if (txtrateperbox.Text == "")
+                    {
+                        txtrateperbox.Text = "";
+                        txttotalperbox.Text = "";
+                    }
+                    else if (txtrateperbox.Text != "" && txtqtyinbox.Text != "")
+                    {
+                        txttotalperbox.Text = (float.Parse(txtrateperbox.Text) * float.Parse(txtqtyinbox.Text)).ToString();
+                    }
+                }
+                else if (txtqtyinbox.Text == "")
+                {
+                    MessageBox.Show("Please Enter Qty In Box Value");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        
+
+        }
+
+        private void txtqtyinbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtrateperbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
 

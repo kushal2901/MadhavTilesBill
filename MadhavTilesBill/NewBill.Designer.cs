@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewBill));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtgstin = new System.Windows.Forms.TextBox();
+            this.lblgst = new System.Windows.Forms.Label();
             this.lblcustomerdetails = new System.Windows.Forms.Label();
             this.lblstate = new System.Windows.Forms.Label();
             this.txtstate = new System.Windows.Forms.TextBox();
@@ -89,8 +91,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbltransportname = new System.Windows.Forms.Label();
             this.lblvehicalno = new System.Windows.Forms.Label();
-            this.lblgst = new System.Windows.Forms.Label();
-            this.txtgstin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,6 +120,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1525, 124);
             this.panel1.TabIndex = 9;
+            // 
+            // txtgstin
+            // 
+            this.txtgstin.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtgstin.Location = new System.Drawing.Point(1193, 74);
+            this.txtgstin.Name = "txtgstin";
+            this.txtgstin.Size = new System.Drawing.Size(301, 41);
+            this.txtgstin.TabIndex = 12;
+            // 
+            // lblgst
+            // 
+            this.lblgst.AutoSize = true;
+            this.lblgst.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblgst.Location = new System.Drawing.Point(1088, 78);
+            this.lblgst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblgst.Name = "lblgst";
+            this.lblgst.Size = new System.Drawing.Size(83, 32);
+            this.lblgst.TabIndex = 11;
+            this.lblgst.Text = "GSTIN";
             // 
             // lblcustomerdetails
             // 
@@ -287,6 +306,7 @@
             this.txtrateperbox.Size = new System.Drawing.Size(124, 41);
             this.txtrateperbox.TabIndex = 21;
             this.txtrateperbox.TextChanged += new System.EventHandler(this.txtrateperbox_TextChanged);
+            this.txtrateperbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrateperbox_KeyPress);
             // 
             // lblrateperbox
             // 
@@ -305,6 +325,8 @@
             this.txtqtyinbox.Name = "txtqtyinbox";
             this.txtqtyinbox.Size = new System.Drawing.Size(124, 41);
             this.txtqtyinbox.TabIndex = 19;
+            this.txtqtyinbox.TextChanged += new System.EventHandler(this.txtqtyinbox_TextChanged);
+            this.txtqtyinbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtqtyinbox_KeyPress);
             // 
             // lblqtyinbox
             // 
@@ -414,7 +436,6 @@
             this.txtreceived.TabIndex = 17;
             this.txtreceived.TextChanged += new System.EventHandler(this.txtreceived_TextChanged);
             this.txtreceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtreceived_KeyPress);
-            
             // 
             // txttotal
             // 
@@ -565,6 +586,7 @@
             this.txtpending.Name = "txtpending";
             this.txtpending.Size = new System.Drawing.Size(210, 41);
             this.txtpending.TabIndex = 19;
+            
             // 
             // lblprnding
             // 
@@ -776,25 +798,6 @@
             this.lblvehicalno.Size = new System.Drawing.Size(91, 32);
             this.lblvehicalno.TabIndex = 1;
             this.lblvehicalno.Text = "Veh.no";
-            // 
-            // lblgst
-            // 
-            this.lblgst.AutoSize = true;
-            this.lblgst.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblgst.Location = new System.Drawing.Point(1088, 78);
-            this.lblgst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblgst.Name = "lblgst";
-            this.lblgst.Size = new System.Drawing.Size(83, 32);
-            this.lblgst.TabIndex = 11;
-            this.lblgst.Text = "GSTIN";
-            // 
-            // txtgstin
-            // 
-            this.txtgstin.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtgstin.Location = new System.Drawing.Point(1193, 74);
-            this.txtgstin.Name = "txtgstin";
-            this.txtgstin.Size = new System.Drawing.Size(301, 41);
-            this.txtgstin.TabIndex = 12;
             // 
             // NewBill
             // 

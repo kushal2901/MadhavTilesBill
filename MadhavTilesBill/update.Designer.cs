@@ -41,6 +41,8 @@
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.lbladdedproduct = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtubpending = new System.Windows.Forms.TextBox();
+            this.lblprnding = new System.Windows.Forms.Label();
             this.txtubreceived = new System.Windows.Forms.TextBox();
             this.txtubtotal = new System.Windows.Forms.TextBox();
             this.txtubdiscount = new System.Windows.Forms.TextBox();
@@ -61,6 +63,8 @@
             this.lblproductname = new System.Windows.Forms.Label();
             this.lblproductdetails = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtubgstin = new System.Windows.Forms.TextBox();
+            this.lblgst = new System.Windows.Forms.Label();
             this.lblcustomerdetails = new System.Windows.Forms.Label();
             this.lblstate = new System.Windows.Forms.Label();
             this.txtubstate = new System.Windows.Forms.TextBox();
@@ -74,8 +78,6 @@
             this.picmaximizeupdatebill = new System.Windows.Forms.PictureBox();
             this.picminimizeupdatebill = new System.Windows.Forms.PictureBox();
             this.piccloseupdatebill = new System.Windows.Forms.PictureBox();
-            this.txtubpending = new System.Windows.Forms.TextBox();
-            this.lblprnding = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtubtotalperbox = new System.Windows.Forms.TextBox();
             this.lbltotalperbox = new System.Windows.Forms.Label();
@@ -87,8 +89,6 @@
             this.txtubproductname1 = new System.Windows.Forms.TextBox();
             this.lblproductname1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtubgstin = new System.Windows.Forms.TextBox();
-            this.lblgst = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtubplaceofsupply = new System.Windows.Forms.TextBox();
             this.txtubvehicalno = new System.Windows.Forms.TextBox();
@@ -250,6 +250,24 @@
             this.panel3.Size = new System.Drawing.Size(383, 408);
             this.panel3.TabIndex = 24;
             // 
+            // txtubpending
+            // 
+            this.txtubpending.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtubpending.Location = new System.Drawing.Point(161, 360);
+            this.txtubpending.Name = "txtubpending";
+            this.txtubpending.Size = new System.Drawing.Size(210, 41);
+            this.txtubpending.TabIndex = 21;
+            // 
+            // lblprnding
+            // 
+            this.lblprnding.AutoSize = true;
+            this.lblprnding.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblprnding.Location = new System.Drawing.Point(4, 366);
+            this.lblprnding.Name = "lblprnding";
+            this.lblprnding.Size = new System.Drawing.Size(105, 32);
+            this.lblprnding.TabIndex = 20;
+            this.lblprnding.Text = "Pending";
+            // 
             // txtubreceived
             // 
             this.txtubreceived.Font = new System.Drawing.Font("Segoe UI", 15F);
@@ -257,8 +275,9 @@
             this.txtubreceived.Name = "txtubreceived";
             this.txtubreceived.Size = new System.Drawing.Size(210, 41);
             this.txtubreceived.TabIndex = 17;
+            this.txtubreceived.TextChanged += new System.EventHandler(this.txtubreceived_TextChanged);
             this.txtubreceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtubreceived_KeyPress);
-            this.txtubreceived.Leave += new System.EventHandler(this.txtubreceived_Leave);
+            
             // 
             // txtubtotal
             // 
@@ -458,6 +477,25 @@
             this.panel1.Size = new System.Drawing.Size(1525, 122);
             this.panel1.TabIndex = 22;
             // 
+            // txtubgstin
+            // 
+            this.txtubgstin.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtubgstin.Location = new System.Drawing.Point(1218, 74);
+            this.txtubgstin.Name = "txtubgstin";
+            this.txtubgstin.Size = new System.Drawing.Size(301, 41);
+            this.txtubgstin.TabIndex = 14;
+            // 
+            // lblgst
+            // 
+            this.lblgst.AutoSize = true;
+            this.lblgst.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblgst.Location = new System.Drawing.Point(1113, 78);
+            this.lblgst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblgst.Name = "lblgst";
+            this.lblgst.Size = new System.Drawing.Size(83, 32);
+            this.lblgst.TabIndex = 13;
+            this.lblgst.Text = "GSTIN";
+            // 
             // lblcustomerdetails
             // 
             this.lblcustomerdetails.AutoSize = true;
@@ -622,24 +660,6 @@
             this.piccloseupdatebill.TabStop = false;
             this.piccloseupdatebill.Click += new System.EventHandler(this.piccloseupdatebill_Click);
             // 
-            // txtubpending
-            // 
-            this.txtubpending.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtubpending.Location = new System.Drawing.Point(161, 360);
-            this.txtubpending.Name = "txtubpending";
-            this.txtubpending.Size = new System.Drawing.Size(210, 41);
-            this.txtubpending.TabIndex = 21;
-            // 
-            // lblprnding
-            // 
-            this.lblprnding.AutoSize = true;
-            this.lblprnding.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblprnding.Location = new System.Drawing.Point(4, 366);
-            this.lblprnding.Name = "lblprnding";
-            this.lblprnding.Size = new System.Drawing.Size(105, 32);
-            this.lblprnding.TabIndex = 20;
-            this.lblprnding.Text = "Pending";
-            // 
             // panel6
             // 
             this.panel6.AutoSize = true;
@@ -710,6 +730,7 @@
             this.txtubrateperbox.Size = new System.Drawing.Size(124, 41);
             this.txtubrateperbox.TabIndex = 21;
             this.txtubrateperbox.TextChanged += new System.EventHandler(this.txtubrateperbox_TextChanged);
+            this.txtubrateperbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtubrateperbox_KeyPress);
             // 
             // lblrateperbox
             // 
@@ -728,6 +749,8 @@
             this.txtubqtyinbox.Name = "txtubqtyinbox";
             this.txtubqtyinbox.Size = new System.Drawing.Size(124, 41);
             this.txtubqtyinbox.TabIndex = 19;
+            this.txtubqtyinbox.TextChanged += new System.EventHandler(this.txtubqtyinbox_TextChanged);
+            this.txtubqtyinbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtubqtyinbox_KeyPress);
             // 
             // lblqtyinbox
             // 
@@ -766,25 +789,6 @@
             this.label1.Size = new System.Drawing.Size(132, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Details";
-            // 
-            // txtubgstin
-            // 
-            this.txtubgstin.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtubgstin.Location = new System.Drawing.Point(1218, 74);
-            this.txtubgstin.Name = "txtubgstin";
-            this.txtubgstin.Size = new System.Drawing.Size(301, 41);
-            this.txtubgstin.TabIndex = 14;
-            // 
-            // lblgst
-            // 
-            this.lblgst.AutoSize = true;
-            this.lblgst.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblgst.Location = new System.Drawing.Point(1113, 78);
-            this.lblgst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblgst.Name = "lblgst";
-            this.lblgst.Size = new System.Drawing.Size(83, 32);
-            this.lblgst.TabIndex = 13;
-            this.lblgst.Text = "GSTIN";
             // 
             // panel7
             // 

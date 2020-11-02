@@ -403,24 +403,7 @@ namespace MadhavTilesBill
             }
         }
 
-        private void txtubreceived_Leave(object sender, EventArgs e)
-        {
-            if (txtubtotal.Text != "" && txtubreceived.Text != "")
-            {
-                int totalvalue = Convert.ToInt32(txtubtotal.Text);
-                int receivedvalue = Convert.ToInt32(txtubreceived.Text);
-                //int i = totalvalue - receivedvalue;
-                if (totalvalue < receivedvalue)
-                {
-                    MessageBox.Show("Received Value Grater Then Total Amount");
-                    txtubreceived.Focus();
-                }
-            }
-            else if (txtubreceived.Text == "")
-            {
-                txtubreceived.Text = "";
-            }
-        }
+        
 
         public void productnameadd()
         {
@@ -486,6 +469,84 @@ namespace MadhavTilesBill
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtubqtyinbox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtubqtyinbox.Text != "")
+                {
+                    if (txtubrateperbox.Text == "")
+                    {
+                        txtubrateperbox.Text = "";
+                        txtubtotalperbox.Text = "";
+                    }
+                    else if (txtubrateperbox.Text != "" && txtubqtyinbox.Text != "")
+                    {
+                        txtubtotalperbox.Text = (float.Parse(txtubrateperbox.Text) * float.Parse(txtubqtyinbox.Text)).ToString();
+                    }
+                }
+                else if (txtubqtyinbox.Text == "")
+                {
+                    MessageBox.Show("Please Enter Qty In Box Value");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtubqtyinbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtubrateperbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtubreceived_TextChanged(object sender, EventArgs e)
+        {
+            if (txtubtotal.Text != "" && txtubreceived.Text != "")
+            {
+                int totalvalue = Convert.ToInt32(txtubtotal.Text);
+                int receivedvalue = Convert.ToInt32(txtubreceived.Text);
+                //int i = totalvalue - receivedvalue;
+                if (totalvalue < receivedvalue)
+                {
+                    MessageBox.Show("Received Value Grater Then Total Amount", "GraterThen Value", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtubreceived.Text = "";
+                    txtubpending.Text = "";
+                    txtubreceived.Focus();
+                }
+                else if (txtubtotal.Text != "" && txtubreceived.Text != "")
+                {
+                    float total = float.Parse(txtubtotal.Text) - float.Parse(txtubreceived.Text);
+                    txtubpending.Text = total.ToString();
+                }
+            }
+            else if (txtubreceived.Text == "")
+            {
+                txtubreceived.Text = "";
+                txtubpending.Text = "";
             }
         }
     }
