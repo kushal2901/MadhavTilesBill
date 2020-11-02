@@ -307,6 +307,16 @@ namespace MadhavTilesBill {
             
             private global::System.Data.DataColumn columnbilldate;
             
+            private global::System.Data.DataColumn columncustomergstin;
+            
+            private global::System.Data.DataColumn columnpending;
+            
+            private global::System.Data.DataColumn columntransname;
+            
+            private global::System.Data.DataColumn columnvehno;
+            
+            private global::System.Data.DataColumn columnplaceofsupply;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tbl_newbillDataTable() {
@@ -454,6 +464,46 @@ namespace MadhavTilesBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn customergstinColumn {
+                get {
+                    return this.columncustomergstin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pendingColumn {
+                get {
+                    return this.columnpending;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn transnameColumn {
+                get {
+                    return this.columntransname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vehnoColumn {
+                get {
+                    return this.columnvehno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn placeofsupplyColumn {
+                get {
+                    return this.columnplaceofsupply;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +539,26 @@ namespace MadhavTilesBill {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tbl_newbillRow Addtbl_newbillRow(long invoiceno, string name, string address, string state, string contact, string pcompany, string pname, decimal basicprice, decimal sgst, decimal cgst, decimal discount, decimal total, decimal received, System.DateTime billdate) {
+            public tbl_newbillRow Addtbl_newbillRow(
+                        long invoiceno, 
+                        string name, 
+                        string address, 
+                        string state, 
+                        string contact, 
+                        string pcompany, 
+                        string pname, 
+                        decimal basicprice, 
+                        decimal sgst, 
+                        decimal cgst, 
+                        decimal discount, 
+                        decimal total, 
+                        decimal received, 
+                        System.DateTime billdate, 
+                        string customergstin, 
+                        decimal pending, 
+                        string transname, 
+                        string vehno, 
+                        string placeofsupply) {
                 tbl_newbillRow rowtbl_newbillRow = ((tbl_newbillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         invoiceno,
@@ -505,7 +574,12 @@ namespace MadhavTilesBill {
                         discount,
                         total,
                         received,
-                        billdate};
+                        billdate,
+                        customergstin,
+                        pending,
+                        transname,
+                        vehno,
+                        placeofsupply};
                 rowtbl_newbillRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbl_newbillRow);
                 return rowtbl_newbillRow;
@@ -542,6 +616,11 @@ namespace MadhavTilesBill {
                 this.columntotal = base.Columns["total"];
                 this.columnreceived = base.Columns["received"];
                 this.columnbilldate = base.Columns["billdate"];
+                this.columncustomergstin = base.Columns["customergstin"];
+                this.columnpending = base.Columns["pending"];
+                this.columntransname = base.Columns["transname"];
+                this.columnvehno = base.Columns["vehno"];
+                this.columnplaceofsupply = base.Columns["placeofsupply"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +654,16 @@ namespace MadhavTilesBill {
                 base.Columns.Add(this.columnreceived);
                 this.columnbilldate = new global::System.Data.DataColumn("billdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbilldate);
+                this.columncustomergstin = new global::System.Data.DataColumn("customergstin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncustomergstin);
+                this.columnpending = new global::System.Data.DataColumn("pending", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpending);
+                this.columntransname = new global::System.Data.DataColumn("transname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntransname);
+                this.columnvehno = new global::System.Data.DataColumn("vehno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvehno);
+                this.columnplaceofsupply = new global::System.Data.DataColumn("placeofsupply", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnplaceofsupply);
                 this.columninvoiceno.AllowDBNull = false;
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 50;
@@ -595,6 +684,15 @@ namespace MadhavTilesBill {
                 this.columntotal.AllowDBNull = false;
                 this.columnreceived.AllowDBNull = false;
                 this.columnbilldate.AllowDBNull = false;
+                this.columncustomergstin.AllowDBNull = false;
+                this.columncustomergstin.MaxLength = 50;
+                this.columnpending.AllowDBNull = false;
+                this.columntransname.AllowDBNull = false;
+                this.columntransname.MaxLength = 50;
+                this.columnvehno.AllowDBNull = false;
+                this.columnvehno.MaxLength = 20;
+                this.columnplaceofsupply.AllowDBNull = false;
+                this.columnplaceofsupply.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -888,6 +986,61 @@ namespace MadhavTilesBill {
                     this[this.tabletbl_newbill.billdateColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string customergstin {
+                get {
+                    return ((string)(this[this.tabletbl_newbill.customergstinColumn]));
+                }
+                set {
+                    this[this.tabletbl_newbill.customergstinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal pending {
+                get {
+                    return ((decimal)(this[this.tabletbl_newbill.pendingColumn]));
+                }
+                set {
+                    this[this.tabletbl_newbill.pendingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string transname {
+                get {
+                    return ((string)(this[this.tabletbl_newbill.transnameColumn]));
+                }
+                set {
+                    this[this.tabletbl_newbill.transnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string vehno {
+                get {
+                    return ((string)(this[this.tabletbl_newbill.vehnoColumn]));
+                }
+                set {
+                    this[this.tabletbl_newbill.vehnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string placeofsupply {
+                get {
+                    return ((string)(this[this.tabletbl_newbill.placeofsupplyColumn]));
+                }
+                set {
+                    this[this.tabletbl_newbill.placeofsupplyColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -1063,15 +1216,21 @@ namespace MadhavTilesBill.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("total", "total");
             tableMapping.ColumnMappings.Add("received", "received");
             tableMapping.ColumnMappings.Add("billdate", "billdate");
+            tableMapping.ColumnMappings.Add("customergstin", "customergstin");
+            tableMapping.ColumnMappings.Add("pending", "pending");
+            tableMapping.ColumnMappings.Add("transname", "transname");
+            tableMapping.ColumnMappings.Add("vehno", "vehno");
+            tableMapping.ColumnMappings.Add("placeofsupply", "placeofsupply");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbl_newbill] ([invoiceno], [name], [address], [state], [contact], [pcompany], [pname], [basicprice], [sgst], [cgst], [discount], [total], [received], [billdate]) VALUES (@invoiceno, @name, @address, @state, @contact, @pcompany, @pname, @basicprice, @sgst, @cgst, @discount, @total, @received, @billdate)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tbl_newbill] ([invoiceno], [name], [address], [state], [customergstin], [contact], [pcompany], [pname], [basicprice], [sgst], [cgst], [discount], [total], [received], [pending], [billdate], [transname], [vehno], [placeofsupply]) VALUES (@invoiceno, @name, @address, @state, @customergstin, @contact, @pcompany, @pname, @basicprice, @sgst, @cgst, @discount, @total, @received, @pending, @billdate, @transname, @vehno, @placeofsupply)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@invoiceno", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "invoiceno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@customergstin", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customergstin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contact", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pcompany", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pcompany", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1081,7 +1240,11 @@ namespace MadhavTilesBill.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@discount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "discount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@received", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "received", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pending", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "pending", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@billdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "billdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@transname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "transname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vehno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vehno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@placeofsupply", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "placeofsupply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1097,8 +1260,9 @@ namespace MadhavTilesBill.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT invoiceno, name, address, state, contact, pcompany, pname, basicprice, sgs" +
-                "t, cgst, discount, total, received, billdate FROM dbo.tbl_newbill";
+            this._commandCollection[0].CommandText = "SELECT invoiceno, name, address, state, customergstin, contact, pcompany, pname, " +
+                "basicprice, sgst, cgst, discount, total, received, pending, billdate, transname," +
+                " vehno, placeofsupply FROM dbo.tbl_newbill";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1153,71 +1317,6 @@ namespace MadhavTilesBill.DataSet1TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long invoiceno, string name, string address, string state, string contact, string pcompany, string pname, decimal basicprice, decimal sgst, decimal cgst, decimal discount, decimal total, decimal received, System.DateTime billdate) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(invoiceno));
-            if ((name == null)) {
-                throw new global::System.ArgumentNullException("name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(name));
-            }
-            if ((address == null)) {
-                throw new global::System.ArgumentNullException("address");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(address));
-            }
-            if ((state == null)) {
-                throw new global::System.ArgumentNullException("state");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(state));
-            }
-            if ((contact == null)) {
-                throw new global::System.ArgumentNullException("contact");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(contact));
-            }
-            if ((pcompany == null)) {
-                throw new global::System.ArgumentNullException("pcompany");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(pcompany));
-            }
-            if ((pname == null)) {
-                throw new global::System.ArgumentNullException("pname");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(pname));
-            }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(basicprice));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(sgst));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(cgst));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(discount));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(total));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(received));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((System.DateTime)(billdate));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     

@@ -229,7 +229,7 @@ namespace MadhavTilesBill
                         //insert record query
                         obj.getconnection();*/
                         
-                        cmd = new SqlCommand("insert into tbl_newbill values(" + Convert.ToInt32(txtinvoiceno.Text) + ",'" + txtname.Text + "','" + txtaddress.Text + "','" + txtstate.Text + "','" + txtcontact.Text + "','" + cmbpcompany.Text + "','" + txtpname.Text + "'," + Convert.ToInt32(txtbasicprice.Text) + "," + Convert.ToInt32(txtsgst.Text) + "," + Convert.ToInt32(txtcgst.Text) + "," + Convert.ToInt32(txtdiscount.Text) + "," + Convert.ToInt32(txttotal.Text) + "," + Convert.ToInt32(txtreceived.Text) + ",'" + dateTimePicker1.Value.Date.ToString() + "')",obj.con);
+                        cmd = new SqlCommand("insert into tbl_newbill values(" + Convert.ToInt32(txtinvoiceno.Text) + ",'" + txtname.Text + "','" + txtaddress.Text + "','" + txtstate.Text + "','"+txtgstin.Text+"','" + txtcontact.Text + "','" + cmbpcompany.Text + "','" + txtpname.Text + "'," + Convert.ToInt32(txtbasicprice.Text) + "," + Convert.ToInt32(txtsgst.Text) + "," + Convert.ToInt32(txtcgst.Text) + "," + Convert.ToInt32(txtdiscount.Text) + "," + Convert.ToInt32(txttotal.Text) + "," + Convert.ToInt32(txtreceived.Text) + ","+Convert.ToInt32(txtpending.Text)+",'" + dateTimePicker1.Value.Date.ToString() + "','"+txttransname.Text+"','"+txtvehicalno.Text+"','"+txtplaceofsupply.Text+"')",obj.con);
                         int result =  cmd.ExecuteNonQuery();
                         if(result > 0)
                         {
@@ -472,12 +472,6 @@ namespace MadhavTilesBill
 
         private void txtreceived_TextChanged(object sender, EventArgs e)
         {
-            
-            
-        }
-
-        private void txtreceived_Leave(object sender, EventArgs e)
-        {
             if (txttotal.Text != "" && txtreceived.Text != "")
             {
                 int totalvalue = Convert.ToInt32(txttotal.Text);
@@ -489,12 +483,14 @@ namespace MadhavTilesBill
                     txtreceived.Focus();
                 }
             }
-            else if(txtreceived.Text == "")
+            else if (txtreceived.Text == "")
             {
                 txtreceived.Text = "";
             }
-            
+
         }
+
+        
 
         public void productnameadd()
         {

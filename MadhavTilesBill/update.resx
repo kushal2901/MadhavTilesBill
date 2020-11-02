@@ -136,4 +136,13 @@
   <metadata name="piccloseupdatebill.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnubadd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHkAAAApCAYAAAARdIa+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACbSURBVHhe7dExEQJAEARBFGEHNSggRwcZKR4Q9NR/gIib
+        nqoNNu7L0vggB4IcCHIgyIEgBzrIr+9nXR83G7hte5D30cy2LeThQQ4EORDkQJADQQ4EORDkQJADQQ4E
+        ORDkQJADQQ4EORDkQJADQQ4EORDkQJADQQ4EORDkQJADQQ4EOdAf+f5+nmPztm0PsmYHORDkQJADQR7f
+        Wj/oIAS0ROw/7AAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

@@ -70,7 +70,7 @@ namespace MadhavTilesBill
             double sum = 0;
             for(int i = 0;i<bunifuCustomDataGrid1.Rows.Count;i++)
             {
-                sum += Convert.ToDouble(bunifuCustomDataGrid1.Rows[i].Cells[11].Value.ToString());
+                sum += Convert.ToDouble(bunifuCustomDataGrid1.Rows[i].Cells[12].Value.ToString());
             }
             txttotalsales.Text = sum.ToString();
         }
@@ -86,7 +86,7 @@ namespace MadhavTilesBill
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("select invoiceno as 'Invoice No', name as 'Name', address as 'Address', state as 'State', contact as 'Contact', pcompany as 'Company', pname as 'Pro Name ', basicprice as 'basicPrice', sgst as 'Sgst', cgst as 'Cgst', discount as 'Discount', total as 'Total', received as 'Received', billdate as 'Billdate' from tbl_newbill where invoiceno = " + Convert.ToInt32(txtinvoicenosearch.Text) + "", obj.con);
+                    cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where invoiceno = " + Convert.ToInt32(txtinvoicenosearch.Text) + "", obj.con);
                     cmd.ExecuteNonQuery();
                     dt = new DataTable();
                     sda = new SqlDataAdapter(cmd);
@@ -121,7 +121,7 @@ namespace MadhavTilesBill
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("select invoiceno as 'Invoice No', name as 'Name', address as 'Address', state as 'State', contact as 'Contact', pcompany as 'Company', pname as 'Pro Name ', basicprice as 'basicPrice', sgst as 'Sgst', cgst as 'Cgst', discount as 'Discount', total as 'Total', received as 'Received', billdate as 'Billdate' from tbl_newbill where billdate between '"+dateTimePicker1.Value.Date.ToString()+"' and '"+dateTimePicker2.Value.Date.ToString()+"' ", obj.con);
+                    cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where billdate between '" + dateTimePicker1.Value.Date.ToString()+"' and '"+dateTimePicker2.Value.Date.ToString()+"' ", obj.con);
                     cmd.ExecuteNonQuery();
                     dt = new DataTable();
                     sda = new SqlDataAdapter(cmd);
@@ -148,7 +148,9 @@ namespace MadhavTilesBill
         private void btnviewall_Click(object sender, EventArgs e)
         {
             obj.getconnection();
-            cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',billdate as 'Billdate' from tbl_newbill order by invoiceno asc", obj.con);
+            cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill order by invoiceno asc", obj.con);
+            /*//cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',billdate as 'Billdate' from tbl_newbill order by invoiceno asc", obj.con);
+            //select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport,vehno as 'VehNo.',placeofsupply as 'Place'*/
             cmd.ExecuteNonQuery();
             dt = new DataTable();
             sda = new SqlDataAdapter(cmd);
@@ -232,16 +234,21 @@ namespace MadhavTilesBill
                     ub.txtubname.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
                     ub.txtubaddress.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
                     ub.txtubstate.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
-                    ub.txtubcontact.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
-                    ub.cmbubpcompany.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
-                    ub.txtubpname.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
-                    ub.txtubbasicprice.Text = bunifuCustomDataGrid1.CurrentRow.Cells[7].Value.ToString();
-                    ub.txtubsgst.Text = bunifuCustomDataGrid1.CurrentRow.Cells[8].Value.ToString();
-                    ub.txtubcgst.Text = bunifuCustomDataGrid1.CurrentRow.Cells[9].Value.ToString();
-                    ub.txtubdiscount.Text = bunifuCustomDataGrid1.CurrentRow.Cells[10].Value.ToString();
-                    ub.txtubtotal.Text = bunifuCustomDataGrid1.CurrentRow.Cells[11].Value.ToString();
-                    ub.txtubreceived.Text = bunifuCustomDataGrid1.CurrentRow.Cells[12].Value.ToString();
-                    ub.dateTimePicker1.Text = bunifuCustomDataGrid1.CurrentRow.Cells[13].Value.ToString();
+                    ub.txtubgstin.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
+                    ub.txtubcontact.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
+                    ub.cmbubpcompany.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
+                    ub.txtubpname.Text = bunifuCustomDataGrid1.CurrentRow.Cells[7].Value.ToString();
+                    ub.txtubbasicprice.Text = bunifuCustomDataGrid1.CurrentRow.Cells[8].Value.ToString();
+                    ub.txtubsgst.Text = bunifuCustomDataGrid1.CurrentRow.Cells[9].Value.ToString();
+                    ub.txtubcgst.Text = bunifuCustomDataGrid1.CurrentRow.Cells[10].Value.ToString();
+                    ub.txtubdiscount.Text = bunifuCustomDataGrid1.CurrentRow.Cells[11].Value.ToString();
+                    ub.txtubtotal.Text = bunifuCustomDataGrid1.CurrentRow.Cells[12].Value.ToString();
+                    ub.txtubreceived.Text = bunifuCustomDataGrid1.CurrentRow.Cells[13].Value.ToString();
+                    ub.txtubpending.Text = bunifuCustomDataGrid1.CurrentRow.Cells[14].Value.ToString();
+                    ub.dateTimePicker1.Text = bunifuCustomDataGrid1.CurrentRow.Cells[15].Value.ToString();
+                    ub.txtubtransname.Text = bunifuCustomDataGrid1.CurrentRow.Cells[16].Value.ToString();
+                    ub.txtubvehicalno.Text = bunifuCustomDataGrid1.CurrentRow.Cells[17].Value.ToString();
+                    ub.txtubplaceofsupply.Text = bunifuCustomDataGrid1.CurrentRow.Cells[18].Value.ToString();
                     obj.closeconnection();
                     ub.Show();
                     this.Close();
@@ -347,7 +354,7 @@ namespace MadhavTilesBill
             {
                 
                 obj.getconnection();
-                cmd = new SqlCommand("select * from tbl_newbill where received != '"+0+"'", obj.con);
+                cmd = new SqlCommand("select * from tbl_newbill where pending != '"+0+"'", obj.con);
                 cmd.ExecuteNonQuery();
                 dt = new DataTable();
                 sda = new SqlDataAdapter(cmd);

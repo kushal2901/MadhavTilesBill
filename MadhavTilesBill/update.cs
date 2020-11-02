@@ -61,7 +61,7 @@ namespace MadhavTilesBill
         {
             obj.getconnection();
             //cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',billdate as 'Billdate' from tbl_newbill order by invoiceno asc", obj.con);
-            cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',billdate as 'Billdate' from tbl_newbill where invoiceno = "+Convert.ToInt32(txtubinvoiceno.Text)+"", obj.con);
+            cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport,vehno as 'VehNo.',placeofsupply as 'Place' from tbl_newbill where invoiceno = "+Convert.ToInt32(txtubinvoiceno.Text)+"", obj.con);
             dr = cmd.ExecuteReader();
             dt = new DataTable();
             dt.Load(dr);
@@ -180,7 +180,7 @@ namespace MadhavTilesBill
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("update tbl_newbill set name = '" + txtubname.Text + "',address = '" + txtubaddress.Text + "',state = '" + txtubstate.Text + "',contact = '" + txtubcontact.Text + "',pcompany = '" + cmbubpcompany.Text + "',pname = '" + txtubpname.Text + "',basicprice = " + Convert.ToInt32(txtubbasicprice.Text) + ",sgst = " + Convert.ToInt32(txtubsgst.Text) + ",cgst = " + Convert.ToInt32(txtubcgst.Text) + ",discount = " + Convert.ToInt32(txtubdiscount.Text) + ",total = " + Convert.ToInt32(txtubtotal.Text) + ",received = " + Convert.ToInt32(txtubreceived.Text) + ",billdate = '" + dateTimePicker1.Value.Date.ToString() + "' where invoiceno = "+Convert.ToInt32(txtubinvoiceno.Text)+"", obj.con);
+                    cmd = new SqlCommand("update tbl_newbill set name = '" + txtubname.Text + "',address = '" + txtubaddress.Text + "',state = '" + txtubstate.Text + "',customergstin = '"+txtubgstin.Text+"',contact = '" + txtubcontact.Text + "',pcompany = '" + cmbubpcompany.Text + "',pname = '" + txtubpname.Text + "',basicprice = " + Convert.ToInt32(txtubbasicprice.Text) + ",sgst = " + Convert.ToInt32(txtubsgst.Text) + ",cgst = " + Convert.ToInt32(txtubcgst.Text) + ",discount = " + Convert.ToInt32(txtubdiscount.Text) + ",total = " + Convert.ToInt32(txtubtotal.Text) + ",received = " + Convert.ToInt32(txtubreceived.Text) + ",pending = "+Convert.ToInt32(txtubpending.Text)+",billdate = '" + dateTimePicker1.Value.Date.ToString() + "',transname = '"+txtubtransname.Text+"',vehno = '"+txtubvehicalno.Text+"',placeofsupply = '"+txtubplaceofsupply.Text+"' where invoiceno = "+Convert.ToInt32(txtubinvoiceno.Text)+"", obj.con);
                     /*cmd.ExecuteNonQuery();
                     sda = new SqlDataAdapter(cmd);
                     dt = new DataTable();
@@ -419,6 +419,73 @@ namespace MadhavTilesBill
             else if (txtubreceived.Text == "")
             {
                 txtubreceived.Text = "";
+            }
+        }
+
+        public void productnameadd()
+        {
+            if (txtubpname.Text == "")
+            {
+                txtubpname.Text = txtubproductname1.Text + " - " + txtubqtyinbox.Text;
+            }
+            else if (txtubpname.Text != "")
+            {
+                string runtimename = txtubpname.Text;
+                txtubpname.Text = runtimename + "," + txtubproductname1.Text + " - " + txtubqtyinbox.Text;
+            }
+        }
+
+        public void basicpricecalculation()
+        {
+            if (txtubbasicprice.Text == "")
+            {
+                txtubbasicprice.Text = txtubtotalperbox.Text;
+            }
+            else if (txtubbasicprice.Text != "")
+            {
+                float nototal1 = 0;
+                nototal1 = float.Parse(txtubbasicprice.Text) + float.Parse(txtubtotalperbox.Text);
+                txtubbasicprice.Text = nototal1.ToString();
+            }
+        }
+
+        private void btnubadd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                productnameadd();
+                basicpricecalculation();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtubrateperbox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtubqtyinbox.Text != "")
+                {
+                    if (txtubrateperbox.Text == "")
+                    {
+                        txtubrateperbox.Text = "";
+                        txtubtotalperbox.Text = "";
+                    }
+                    else if (txtubrateperbox.Text != "" && txtubqtyinbox.Text != "")
+                    {
+                        txtubtotalperbox.Text = (float.Parse(txtubrateperbox.Text) * float.Parse(txtubqtyinbox.Text)).ToString();
+                    }
+                }
+                else if (txtubqtyinbox.Text == "")
+                {
+                    MessageBox.Show("Please Enter Qty In Box Value");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

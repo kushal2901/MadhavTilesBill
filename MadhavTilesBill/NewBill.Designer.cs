@@ -70,6 +70,8 @@
             this.lblbasicprice = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtpending = new System.Windows.Forms.TextBox();
+            this.lblprnding = new System.Windows.Forms.Label();
             this.txtinvoiceno = new System.Windows.Forms.TextBox();
             this.lblinvoiceno = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -79,16 +81,16 @@
             this.picminimizenewbill = new System.Windows.Forms.PictureBox();
             this.picclosenewbill = new System.Windows.Forms.PictureBox();
             this.btnsave = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtpending = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtplaceofsupply = new System.Windows.Forms.TextBox();
+            this.txtvehicalno = new System.Windows.Forms.TextBox();
+            this.lblplaceofsupply = new System.Windows.Forms.Label();
+            this.txttransname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lbltransportname = new System.Windows.Forms.Label();
+            this.lblvehicalno = new System.Windows.Forms.Label();
+            this.lblgst = new System.Windows.Forms.Label();
+            this.txtgstin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -103,6 +105,8 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.txtgstin);
+            this.panel1.Controls.Add(this.lblgst);
             this.panel1.Controls.Add(this.lblcustomerdetails);
             this.panel1.Controls.Add(this.lblstate);
             this.panel1.Controls.Add(this.txtstate);
@@ -114,7 +118,7 @@
             this.panel1.Controls.Add(this.lblcontact);
             this.panel1.Location = new System.Drawing.Point(0, 87);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1525, 178);
+            this.panel1.Size = new System.Drawing.Size(1525, 124);
             this.panel1.TabIndex = 9;
             // 
             // lblcustomerdetails
@@ -133,7 +137,7 @@
             // 
             this.lblstate.AutoSize = true;
             this.lblstate.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblstate.Location = new System.Drawing.Point(1197, 27);
+            this.lblstate.Location = new System.Drawing.Point(1100, 24);
             this.lblstate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstate.Name = "lblstate";
             this.lblstate.Size = new System.Drawing.Size(71, 32);
@@ -143,7 +147,7 @@
             // txtstate
             // 
             this.txtstate.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtstate.Location = new System.Drawing.Point(1290, 21);
+            this.txtstate.Location = new System.Drawing.Point(1193, 18);
             this.txtstate.Name = "txtstate";
             this.txtstate.Size = new System.Drawing.Size(177, 41);
             this.txtstate.TabIndex = 9;
@@ -228,13 +232,13 @@
             this.panel2.Controls.Add(this.lblproductdetails);
             this.panel2.Location = new System.Drawing.Point(0, 217);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1526, 97);
+            this.panel2.Size = new System.Drawing.Size(1526, 74);
             this.panel2.TabIndex = 10;
             // 
             // txttotalperbox
             // 
             this.txttotalperbox.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txttotalperbox.Location = new System.Drawing.Point(1134, 43);
+            this.txttotalperbox.Location = new System.Drawing.Point(1134, 24);
             this.txttotalperbox.Name = "txttotalperbox";
             this.txttotalperbox.Size = new System.Drawing.Size(220, 41);
             this.txttotalperbox.TabIndex = 25;
@@ -243,7 +247,7 @@
             // 
             this.lbltotalperbox.AutoSize = true;
             this.lbltotalperbox.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lbltotalperbox.Location = new System.Drawing.Point(1058, 48);
+            this.lbltotalperbox.Location = new System.Drawing.Point(1058, 29);
             this.lbltotalperbox.Name = "lbltotalperbox";
             this.lbltotalperbox.Size = new System.Drawing.Size(69, 32);
             this.lbltotalperbox.TabIndex = 24;
@@ -267,7 +271,7 @@
             this.btnadd.IdleFillColor = System.Drawing.Color.White;
             this.btnadd.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnadd.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnadd.Location = new System.Drawing.Point(1394, 40);
+            this.btnadd.Location = new System.Drawing.Point(1394, 21);
             this.btnadd.Margin = new System.Windows.Forms.Padding(5);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(121, 41);
@@ -278,7 +282,7 @@
             // txtrateperbox
             // 
             this.txtrateperbox.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtrateperbox.Location = new System.Drawing.Point(910, 40);
+            this.txtrateperbox.Location = new System.Drawing.Point(910, 21);
             this.txtrateperbox.Name = "txtrateperbox";
             this.txtrateperbox.Size = new System.Drawing.Size(124, 41);
             this.txtrateperbox.TabIndex = 21;
@@ -288,7 +292,7 @@
             // 
             this.lblrateperbox.AutoSize = true;
             this.lblrateperbox.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblrateperbox.Location = new System.Drawing.Point(734, 45);
+            this.lblrateperbox.Location = new System.Drawing.Point(734, 26);
             this.lblrateperbox.Name = "lblrateperbox";
             this.lblrateperbox.Size = new System.Drawing.Size(157, 32);
             this.lblrateperbox.TabIndex = 20;
@@ -297,7 +301,7 @@
             // txtqtyinbox
             // 
             this.txtqtyinbox.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtqtyinbox.Location = new System.Drawing.Point(587, 40);
+            this.txtqtyinbox.Location = new System.Drawing.Point(587, 21);
             this.txtqtyinbox.Name = "txtqtyinbox";
             this.txtqtyinbox.Size = new System.Drawing.Size(124, 41);
             this.txtqtyinbox.TabIndex = 19;
@@ -306,7 +310,7 @@
             // 
             this.lblqtyinbox.AutoSize = true;
             this.lblqtyinbox.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblqtyinbox.Location = new System.Drawing.Point(442, 45);
+            this.lblqtyinbox.Location = new System.Drawing.Point(442, 26);
             this.lblqtyinbox.Name = "lblqtyinbox";
             this.lblqtyinbox.Size = new System.Drawing.Size(133, 32);
             this.lblqtyinbox.TabIndex = 18;
@@ -315,7 +319,7 @@
             // txtproductname1
             // 
             this.txtproductname1.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtproductname1.Location = new System.Drawing.Point(185, 40);
+            this.txtproductname1.Location = new System.Drawing.Point(185, 21);
             this.txtproductname1.Name = "txtproductname1";
             this.txtproductname1.Size = new System.Drawing.Size(237, 41);
             this.txtproductname1.TabIndex = 11;
@@ -324,7 +328,7 @@
             // 
             this.lblproductname1.AutoSize = true;
             this.lblproductname1.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.lblproductname1.Location = new System.Drawing.Point(3, 43);
+            this.lblproductname1.Location = new System.Drawing.Point(3, 24);
             this.lblproductname1.Name = "lblproductname1";
             this.lblproductname1.Size = new System.Drawing.Size(176, 32);
             this.lblproductname1.TabIndex = 17;
@@ -346,7 +350,7 @@
             this.txtpname.Location = new System.Drawing.Point(720, 12);
             this.txtpname.Multiline = true;
             this.txtpname.Name = "txtpname";
-            this.txtpname.Size = new System.Drawing.Size(387, 108);
+            this.txtpname.Size = new System.Drawing.Size(387, 90);
             this.txtpname.TabIndex = 16;
             // 
             // cmbpcompany
@@ -386,9 +390,9 @@
             this.panel3.Controls.Add(this.cmbpcompany);
             this.panel3.Controls.Add(this.lblproductcompany);
             this.panel3.Controls.Add(this.lblproductname);
-            this.panel3.Location = new System.Drawing.Point(0, 323);
+            this.panel3.Location = new System.Drawing.Point(0, 299);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1121, 123);
+            this.panel3.Size = new System.Drawing.Size(1124, 105);
             this.panel3.TabIndex = 11;
             // 
             // lbladdedproduct
@@ -410,7 +414,7 @@
             this.txtreceived.TabIndex = 17;
             this.txtreceived.TextChanged += new System.EventHandler(this.txtreceived_TextChanged);
             this.txtreceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtreceived_KeyPress);
-            this.txtreceived.Leave += new System.EventHandler(this.txtreceived_Leave);
+            
             // 
             // txttotal
             // 
@@ -535,7 +539,7 @@
             // 
             this.panel4.AutoSize = true;
             this.panel4.Controls.Add(this.txtpending);
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.lblprnding);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.txtreceived);
             this.panel4.Controls.Add(this.txttotal);
@@ -549,10 +553,28 @@
             this.panel4.Controls.Add(this.lbldiscount);
             this.panel4.Controls.Add(this.lblrecived);
             this.panel4.Controls.Add(this.lbltotal);
-            this.panel4.Location = new System.Drawing.Point(1127, 323);
+            this.panel4.Location = new System.Drawing.Point(1127, 299);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(399, 402);
             this.panel4.TabIndex = 18;
+            // 
+            // txtpending
+            // 
+            this.txtpending.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtpending.Location = new System.Drawing.Point(180, 356);
+            this.txtpending.Name = "txtpending";
+            this.txtpending.Size = new System.Drawing.Size(210, 41);
+            this.txtpending.TabIndex = 19;
+            // 
+            // lblprnding
+            // 
+            this.lblprnding.AutoSize = true;
+            this.lblprnding.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblprnding.Location = new System.Drawing.Point(23, 362);
+            this.lblprnding.Name = "lblprnding";
+            this.lblprnding.Size = new System.Drawing.Size(105, 32);
+            this.lblprnding.TabIndex = 18;
+            this.lblprnding.Text = "Pending";
             // 
             // txtinvoiceno
             // 
@@ -674,47 +696,56 @@
             this.btnsave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(23, 362);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 32);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Pending";
-            // 
-            // txtpending
-            // 
-            this.txtpending.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtpending.Location = new System.Drawing.Point(180, 356);
-            this.txtpending.Name = "txtpending";
-            this.txtpending.Size = new System.Drawing.Size(210, 41);
-            this.txtpending.TabIndex = 19;
-            // 
             // panel6
             // 
             this.panel6.AutoSize = true;
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.txtplaceofsupply);
+            this.panel6.Controls.Add(this.txtvehicalno);
+            this.panel6.Controls.Add(this.lblplaceofsupply);
+            this.panel6.Controls.Add(this.txttransname);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(0, 452);
+            this.panel6.Controls.Add(this.lbltransportname);
+            this.panel6.Controls.Add(this.lblvehicalno);
+            this.panel6.Location = new System.Drawing.Point(0, 410);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1124, 117);
+            this.panel6.Size = new System.Drawing.Size(1124, 131);
             this.panel6.TabIndex = 17;
             // 
-            // textBox1
+            // txtplaceofsupply
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.textBox1.Location = new System.Drawing.Point(215, 23);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(387, 58);
-            this.textBox1.TabIndex = 16;
+            this.txtplaceofsupply.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtplaceofsupply.Location = new System.Drawing.Point(818, 62);
+            this.txtplaceofsupply.Multiline = true;
+            this.txtplaceofsupply.Name = "txtplaceofsupply";
+            this.txtplaceofsupply.Size = new System.Drawing.Size(303, 62);
+            this.txtplaceofsupply.TabIndex = 19;
+            // 
+            // txtvehicalno
+            // 
+            this.txtvehicalno.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtvehicalno.Location = new System.Drawing.Point(818, 8);
+            this.txtvehicalno.Name = "txtvehicalno";
+            this.txtvehicalno.Size = new System.Drawing.Size(237, 41);
+            this.txtvehicalno.TabIndex = 18;
+            // 
+            // lblplaceofsupply
+            // 
+            this.lblplaceofsupply.AutoSize = true;
+            this.lblplaceofsupply.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblplaceofsupply.Location = new System.Drawing.Point(626, 68);
+            this.lblplaceofsupply.Name = "lblplaceofsupply";
+            this.lblplaceofsupply.Size = new System.Drawing.Size(190, 32);
+            this.lblplaceofsupply.TabIndex = 17;
+            this.lblplaceofsupply.Text = "Palce Of Supply";
+            // 
+            // txttransname
+            // 
+            this.txttransname.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txttransname.Location = new System.Drawing.Point(215, 23);
+            this.txttransname.Multiline = true;
+            this.txttransname.Name = "txttransname";
+            this.txttransname.Size = new System.Drawing.Size(387, 58);
+            this.txttransname.TabIndex = 16;
             // 
             // label3
             // 
@@ -726,52 +757,44 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Details Of Dispatch";
             // 
-            // label4
+            // lbltransportname
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(4, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 32);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Transport Name";
+            this.lbltransportname.AutoSize = true;
+            this.lbltransportname.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lbltransportname.Location = new System.Drawing.Point(4, 27);
+            this.lbltransportname.Name = "lbltransportname";
+            this.lbltransportname.Size = new System.Drawing.Size(195, 32);
+            this.lbltransportname.TabIndex = 14;
+            this.lbltransportname.Text = "Transport Name";
             // 
-            // label5
+            // lblvehicalno
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(626, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 32);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Veh.no";
+            this.lblvehicalno.AutoSize = true;
+            this.lblvehicalno.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblvehicalno.Location = new System.Drawing.Point(626, 10);
+            this.lblvehicalno.Name = "lblvehicalno";
+            this.lblvehicalno.Size = new System.Drawing.Size(91, 32);
+            this.lblvehicalno.TabIndex = 1;
+            this.lblvehicalno.Text = "Veh.no";
             // 
-            // label6
+            // lblgst
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(618, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 32);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Palce Of Supply";
+            this.lblgst.AutoSize = true;
+            this.lblgst.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.lblgst.Location = new System.Drawing.Point(1088, 78);
+            this.lblgst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblgst.Name = "lblgst";
+            this.lblgst.Size = new System.Drawing.Size(83, 32);
+            this.lblgst.TabIndex = 11;
+            this.lblgst.Text = "GSTIN";
             // 
-            // textBox2
+            // txtgstin
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.textBox2.Location = new System.Drawing.Point(818, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 41);
-            this.textBox2.TabIndex = 18;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.textBox3.Location = new System.Drawing.Point(818, 51);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(303, 62);
-            this.textBox3.TabIndex = 19;
+            this.txtgstin.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtgstin.Location = new System.Drawing.Point(1193, 74);
+            this.txtgstin.Name = "txtgstin";
+            this.txtgstin.Size = new System.Drawing.Size(301, 41);
+            this.txtgstin.TabIndex = 12;
             // 
             // NewBill
             // 
@@ -870,14 +893,16 @@
         private System.Windows.Forms.TextBox txttotalperbox;
         private System.Windows.Forms.Label lbltotalperbox;
         private System.Windows.Forms.TextBox txtpending;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblprnding;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txttransname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lbltransportname;
+        private System.Windows.Forms.Label lblvehicalno;
+        private System.Windows.Forms.Label lblplaceofsupply;
+        private System.Windows.Forms.TextBox txtplaceofsupply;
+        private System.Windows.Forms.TextBox txtvehicalno;
+        private System.Windows.Forms.TextBox txtgstin;
+        private System.Windows.Forms.Label lblgst;
     }
 }
