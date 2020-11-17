@@ -202,7 +202,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bunifuCustomDataGrid1.DefaultCellStyle = dataGridViewCellStyle12;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
+            //this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.Blue;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
