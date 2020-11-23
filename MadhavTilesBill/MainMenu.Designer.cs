@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picuser = new System.Windows.Forms.PictureBox();
+            this.lbldevlopby = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picmaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picminimizemenu)).BeginInit();
@@ -53,6 +54,7 @@
             // 
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.lbldevlopby);
             this.panel2.Controls.Add(this.lblcompanyname);
             this.panel2.Controls.Add(this.picmaximize);
             this.panel2.Controls.Add(this.picminimizemenu);
@@ -273,8 +275,8 @@
             this.btnproduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnproduct.Name = "btnproduct";
             this.btnproduct.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(243)))));
-            this.btnproduct.OnHovercolor = System.Drawing.Color.RoyalBlue;
-            this.btnproduct.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnproduct.OnHovercolor = System.Drawing.Color.White;
+            this.btnproduct.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(46)))));
             this.btnproduct.selected = false;
             this.btnproduct.Size = new System.Drawing.Size(267, 59);
             this.btnproduct.TabIndex = 4;
@@ -317,6 +319,15 @@
             this.picuser.TabIndex = 0;
             this.picuser.TabStop = false;
             // 
+            // lbldevlopby
+            // 
+            this.lbldevlopby.Location = new System.Drawing.Point(3, 724);
+            this.lbldevlopby.Name = "lbldevlopby";
+            this.lbldevlopby.Size = new System.Drawing.Size(1129, 23);
+            this.lbldevlopby.TabIndex = 6;
+            this.lbldevlopby.Text = "Devlop by : Kushal Vaghela";
+            this.lbldevlopby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,6 +340,7 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picmaximize)).EndInit();
@@ -356,5 +368,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnproduct;
         private Bunifu.Framework.UI.BunifuFlatButton btnprintbill;
         private System.Windows.Forms.Label lblcompanyname;
+        private System.Windows.Forms.Label lbldevlopby;
     }
 }

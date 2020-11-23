@@ -24,6 +24,7 @@ namespace MadhavTilesBill
         private void picclose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();   
         }
 
         private void picminimize_Click(object sender, EventArgs e)
@@ -73,9 +74,13 @@ namespace MadhavTilesBill
                             LogIn lg = new LogIn();
                             lg.Show();
                         }*/
-                        MainMenu mm = new MainMenu();
-                        mm.Show();
-                        this.Hide();
+                        
+                        this.Close();
+                        
+                       
+                        /*MainMenu mm = new MainMenu();
+                        mm.ShowDialog();*/
+                        
                     }
                     else
                     {
@@ -94,10 +99,10 @@ namespace MadhavTilesBill
 
         private void btnsignup_Click(object sender, EventArgs e)
         {
+            //this.Hide();   
             SignUp sup = new SignUp();
-            sup.Show();
-            
-            this.Hide();
+            sup.ShowDialog();
+            //this.Close();
         }
 
         private void picclose_MouseHover(object sender, EventArgs e)

@@ -65,5 +65,12 @@ namespace MadhavTilesBill
             PrintBill pb = new PrintBill();
             pb.Show();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            LogIn lg = new LogIn();
+            lg.ShowDialog();
+            
+        }
     }
 }

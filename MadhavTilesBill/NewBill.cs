@@ -151,6 +151,10 @@ namespace MadhavTilesBill
             txtdiscount.Clear();
             txttotal.Clear();
             txtreceived.Clear();
+            txttransname.Clear();
+            txtvehicalno.Clear();
+            txtplaceofsupply.Clear();
+            txtgstin.Clear();
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -532,8 +536,33 @@ namespace MadhavTilesBill
         {
             try
             {
-                productnameadd();
-                basicpricecalculation();
+                if(txtproductname1.Text == "")
+                {
+                    MessageBox.Show("Please enter product name");
+                }
+                else if(txtqtyinbox.Text == "")
+                {
+                    MessageBox.Show("please enter Qty in box");
+                }
+                else if(txtrateperbox.Text == "")
+                {
+                    MessageBox.Show("Please enter rate per box");
+                }
+                else if(txttotalperbox.Text == "")
+                {
+                    MessageBox.Show("please enter total per box");
+                }
+                else
+                {
+                    productnameadd();
+                    basicpricecalculation();
+                    txtproductname1.Text = "";
+                    txtqtyinbox.Text = "";
+                    txtrateperbox.Text = "";
+                    txttotalperbox.Text = "";
+                }
+                
+                
             }
             catch(Exception ex)
             {
@@ -556,10 +585,13 @@ namespace MadhavTilesBill
                     {
                         txttotalperbox.Text = (float.Parse(txtrateperbox.Text) * float.Parse(txtqtyinbox.Text)).ToString();
                     }
+                    
                 }
                 else if(txtqtyinbox.Text == "")
                 {
-                    MessageBox.Show("Please Enter Qty In Box Value");
+                    //MessageBox.Show("Please Enter Qty In Box Value");
+                    txtrateperbox.Text = "";
+                    txttotalperbox.Text = "";
                 }
             }
             catch(Exception ex)
@@ -583,10 +615,13 @@ namespace MadhavTilesBill
                     {
                         txttotalperbox.Text = (float.Parse(txtrateperbox.Text) * float.Parse(txtqtyinbox.Text)).ToString();
                     }
+                    
                 }
                 else if (txtqtyinbox.Text == "")
                 {
-                    MessageBox.Show("Please Enter Qty In Box Value");
+                    txtrateperbox.Text = "";
+                    txttotalperbox.Text = "";
+                    //MessageBox.Show("Please Enter Qty In Box Value");
                 }
             }
             catch (Exception ex)

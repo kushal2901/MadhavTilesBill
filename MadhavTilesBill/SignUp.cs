@@ -25,6 +25,8 @@ namespace MadhavTilesBill
         private void picclose2_Click(object sender, EventArgs e)
         {
             this.Close();
+            LogIn lg = new LogIn();
+            lg.ShowDialog();
         }
 
         private void picminimize2_Click(object sender, EventArgs e)
@@ -85,8 +87,9 @@ namespace MadhavTilesBill
                         if (result > 0)
                         {
                             MessageBox.Show("Create New User Successfully.", "Sign Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LogIn lg = new LogIn();
-                            lg.Show();
+                            this.Close();
+                            //LogIn lg = new LogIn();
+                            //lg.ShowDialog();
                         }
                         else
                         {
