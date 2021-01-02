@@ -121,7 +121,7 @@ namespace MadhavTilesBill
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where billdate between '" + dateTimePicker1.Value.Date.ToString()+"' and '"+dateTimePicker2.Value.Date.ToString()+"' ", obj.con);
+                    cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where billdate between '" + dateTimePicker1.Value.Date.ToString("dd/MM/yyyy")+"' and '"+dateTimePicker2.Value.Date.ToString("dd/MM/yyyy")+"' ", obj.con);
                     cmd.ExecuteNonQuery();
                     dt = new DataTable();
                     sda = new SqlDataAdapter(cmd);

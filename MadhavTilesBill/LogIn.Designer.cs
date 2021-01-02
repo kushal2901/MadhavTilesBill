@@ -143,7 +143,7 @@
             this.panel364864.Name = "panel364864";
             this.panel364864.Size = new System.Drawing.Size(533, 753);
             this.panel364864.TabIndex = 1;
-            this.panel364864.Paint += new System.Windows.Forms.PaintEventHandler(this.panel364864_Paint);
+            
             // 
             // picshowpasslg
             // 

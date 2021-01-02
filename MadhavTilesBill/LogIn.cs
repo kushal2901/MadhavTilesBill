@@ -58,29 +58,9 @@ namespace MadhavTilesBill
                     if(dr.Read())
                     {
                         MessageBox.Show("Login Success", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        /*//getusernameforloginorlogout.strusername = Convert.ToString(txtusername.Text);
-                        dr.Close();
-                        cmd = new SqlCommand("select contactno from tbl_login where contactno = '"+getusernameforloginorlogout.strusername+"'",obj.con);
-                        
-                        dr = cmd.ExecuteReader();
-                        if(dr.Read())
-                        {
-                            MessageBox.Show(getusernameforloginorlogout.strusername);
-                            MainMenu mm = new MainMenu();
-                            mm.Show();
-                        }
-                        else
-                        {
-                            LogIn lg = new LogIn();
-                            lg.Show();
-                        }*/
-                        
                         this.Close();
-                        
-                       
                         /*MainMenu mm = new MainMenu();
                         mm.ShowDialog();*/
-                        
                     }
                     else
                     {
@@ -93,16 +73,12 @@ namespace MadhavTilesBill
                     MessageBox.Show(ex.Message);
                 }
             }
-            
-          
         }
 
         private void btnsignup_Click(object sender, EventArgs e)
         {
-            //this.Hide();   
             SignUp sup = new SignUp();
             sup.ShowDialog();
-            //this.Close();
         }
 
         private void picclose_MouseHover(object sender, EventArgs e)
@@ -148,9 +124,5 @@ namespace MadhavTilesBill
             }
         }
 
-        private void panel364864_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -76,7 +76,6 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="getinvoicenoforcryrpt.cs" />
-    <Compile Include="getusernameforloginorlogout.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -25,8 +25,8 @@ namespace MadhavTilesBill
         private void picclose2_Click(object sender, EventArgs e)
         {
             this.Close();
-            LogIn lg = new LogIn();
-            lg.ShowDialog();
+            //LogIn lg = new LogIn();
+            //lg.ShowDialog();
         }
 
         private void picminimize2_Click(object sender, EventArgs e)
