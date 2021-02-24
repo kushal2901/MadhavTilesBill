@@ -90,7 +90,7 @@
             this.panel1.Controls.Add(this.lblinvoicenoprintbill);
             this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1377, 60);
+            this.panel1.Size = new System.Drawing.Size(1377, 59);
             this.panel1.TabIndex = 33;
             // 
             // btnfind
@@ -111,10 +111,10 @@
             this.btnfind.IdleFillColor = System.Drawing.Color.White;
             this.btnfind.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnfind.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnfind.Location = new System.Drawing.Point(352, 8);
+            this.btnfind.Location = new System.Drawing.Point(411, 9);
             this.btnfind.Margin = new System.Windows.Forms.Padding(5);
             this.btnfind.Name = "btnfind";
-            this.btnfind.Size = new System.Drawing.Size(111, 41);
+            this.btnfind.Size = new System.Drawing.Size(120, 45);
             this.btnfind.TabIndex = 26;
             this.btnfind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnfind.Click += new System.EventHandler(this.btnfind_Click);
@@ -123,9 +123,9 @@
             // 
             this.txtinvoicenoprintbill.BackColor = System.Drawing.Color.White;
             this.txtinvoicenoprintbill.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.txtinvoicenoprintbill.Location = new System.Drawing.Point(192, 8);
+            this.txtinvoicenoprintbill.Location = new System.Drawing.Point(173, 11);
             this.txtinvoicenoprintbill.Name = "txtinvoicenoprintbill";
-            this.txtinvoicenoprintbill.Size = new System.Drawing.Size(100, 41);
+            this.txtinvoicenoprintbill.Size = new System.Drawing.Size(213, 41);
             this.txtinvoicenoprintbill.TabIndex = 25;
             // 
             // lblinvoicenoprintbill

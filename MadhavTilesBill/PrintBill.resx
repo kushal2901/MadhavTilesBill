@@ -120,11 +120,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnfind.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAG8AAAApCAYAAAA7xHcRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACaSURBVHhe7dExDcNAAATBIDKdoDEC98bhLm04GNBb/4U5
-        jLQrXXH1fEaxhQcXHlx4cOHBhQe38K77P7bj26BNs4U3T1lNs/DQwoMLDy48uPDgwoMLDy48uPDgwoML
-        Dy48uPDgwoMLDy48uPDgwoMLDy48uPDgwoMLDy48uPDgwoMLD+7F23/nOs3ZNFt4ZRYeXHhw4cGFxzbG
-        A38yyTdaX2SSAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAtCAYAAABlJ6+WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACjSURBVHhe7dExDcNAAATBIDKdoDEC98bhLm04GNBb/4VB
+        jHalK66ezyi6gPECxgsYL2C8gPEW8HX/x3Z8G7bpuoDnKa/pGjBcwHgB4wWMFzBewHgB4wWMFzBewHgB
+        4wWMFzBewHgB4wWMFzBewHgB4wWMFzBewHgB4wWMFzBewHgB4wWMFzBewHgB473A++9cp1mbrgu43ALG
+        CxgvYLyA6cZ4AN49zqR4ZcAyAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

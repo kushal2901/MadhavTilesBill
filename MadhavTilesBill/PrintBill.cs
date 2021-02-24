@@ -60,6 +60,7 @@ namespace MadhavTilesBill
                     cryrpt1.SetDataSource(ds);
                     crystalReportViewer1.ReportSource = cryrpt1;
                     obj.closeconnection();
+                    getinvoicenoforcryrpt.strinvoiceno = "0";
                 }
                 catch(Exception ex)
                 {
@@ -84,7 +85,7 @@ namespace MadhavTilesBill
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("select * from tbl_newbill where invoiceno = "+Convert.ToInt32(txtinvoicenoprintbill.Text)+"",obj.con);
+                    cmd = new SqlCommand("select * from tbl_newbill where invoiceno = '"+txtinvoicenoprintbill.Text+"'",obj.con);
                     DataSet ds = new DataSet();
                     sda = new SqlDataAdapter(cmd);
                     sda.Fill(ds, "tbl_newbill");

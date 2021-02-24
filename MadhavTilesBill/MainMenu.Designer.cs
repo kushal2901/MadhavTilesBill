@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbldevlopby = new System.Windows.Forms.Label();
             this.lblcompanyname = new System.Windows.Forms.Label();
             this.picmaximize = new System.Windows.Forms.PictureBox();
             this.picminimizemenu = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picuser = new System.Windows.Forms.PictureBox();
-            this.lbldevlopby = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picmaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picminimizemenu)).BeginInit();
@@ -64,6 +64,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1136, 751);
             this.panel2.TabIndex = 1;
+            // 
+            // lbldevlopby
+            // 
+            this.lbldevlopby.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldevlopby.ForeColor = System.Drawing.Color.Blue;
+            this.lbldevlopby.Location = new System.Drawing.Point(3, 716);
+            this.lbldevlopby.Name = "lbldevlopby";
+            this.lbldevlopby.Size = new System.Drawing.Size(1129, 31);
+            this.lbldevlopby.TabIndex = 6;
+            this.lbldevlopby.Text = "Devlop by : Kushal Vaghela";
+            this.lbldevlopby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblcompanyname
             // 
@@ -90,6 +101,7 @@
             this.picmaximize.TabIndex = 4;
             this.picmaximize.TabStop = false;
             this.picmaximize.Click += new System.EventHandler(this.picmaximize_Click);
+            this.picmaximize.MouseHover += new System.EventHandler(this.picmaximize_MouseHover);
             // 
             // picminimizemenu
             // 
@@ -103,6 +115,7 @@
             this.picminimizemenu.TabIndex = 3;
             this.picminimizemenu.TabStop = false;
             this.picminimizemenu.Click += new System.EventHandler(this.picminimizemenu_Click);
+            this.picminimizemenu.MouseHover += new System.EventHandler(this.picminimizemenu_MouseHover);
             // 
             // picclosemenu
             // 
@@ -116,6 +129,7 @@
             this.picclosemenu.TabIndex = 2;
             this.picclosemenu.TabStop = false;
             this.picclosemenu.Click += new System.EventHandler(this.picclosemenu_Click);
+            this.picclosemenu.MouseHover += new System.EventHandler(this.picclosemenu_MouseHover);
             // 
             // panel1
             // 
@@ -318,15 +332,6 @@
             this.picuser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picuser.TabIndex = 0;
             this.picuser.TabStop = false;
-            // 
-            // lbldevlopby
-            // 
-            this.lbldevlopby.Location = new System.Drawing.Point(3, 724);
-            this.lbldevlopby.Name = "lbldevlopby";
-            this.lbldevlopby.Size = new System.Drawing.Size(1129, 23);
-            this.lbldevlopby.TabIndex = 6;
-            this.lbldevlopby.Text = "Devlop by : Kushal Vaghela";
-            this.lbldevlopby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainMenu
             // 

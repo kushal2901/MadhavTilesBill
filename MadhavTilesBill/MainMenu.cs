@@ -72,5 +72,20 @@ namespace MadhavTilesBill
             lg.ShowDialog();
             
         }
+
+        private void picclosemenu_MouseHover(object sender, EventArgs e)
+        {
+            picclosemenu.BackColor = System.Drawing.Color.White;
+        }
+
+        private void picmaximize_MouseHover(object sender, EventArgs e)
+        {
+            picmaximize.BackColor = System.Drawing.Color.White;
+        }
+
+        private void picminimizemenu_MouseHover(object sender, EventArgs e)
+        {
+            picminimizemenu.BackColor = System.Drawing.Color.White;
+        }
     }
 }

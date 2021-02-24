@@ -71,7 +71,46 @@ namespace MadhavTilesBill
         }
         public void autobillno()
         {
-            int a;
+            obj.getconnection();
+            cmd = new SqlCommand("select invoiceno from tbl_newbill", obj.con);
+            sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+
+            if(ds.Tables[0].Rows.Count < 1)
+            {
+                txtinvoiceno.Text = "INV00000001";
+            }
+            else
+            {
+                cmd = new SqlCommand("select invoiceno from tbl_newbill", obj.con);
+                sda = new SqlDataAdapter(cmd);
+                DataSet ds1 = new DataSet();
+                sda.Fill(ds1);
+                int maxno = 0;
+                var part1 = "0";
+                var part2 = "0";
+
+                foreach (DataRow dr in ds1.Tables[0].Rows)
+                {
+                    var ino = dr["invoiceno"].ToString();
+                    part1 = ino.Substring(0, 3);
+                    part2 = ino.Substring(3, (ino.Length) - 3);
+
+                    if (maxno < Convert.ToInt32(part2))
+                    {
+                        maxno = Convert.ToInt32(part2);
+                    }
+                }
+                maxno = maxno + 1;
+
+                var newserial = part1 + maxno.ToString("00000000");
+                txtinvoiceno.Text = newserial.ToString();
+            }
+
+            
+            obj.closeconnection();
+            /*int a;
 
             obj.getconnection();
             cmd = new SqlCommand("select Max(invoiceno) from tbl_newbill", obj.con);
@@ -92,7 +131,7 @@ namespace MadhavTilesBill
                     txtinvoiceno.Text = a.ToString();
                 }
             }
-            obj.closeconnection();
+            obj.closeconnection();*/
         }
         /*public void fillgrid()
         {
@@ -233,7 +272,7 @@ namespace MadhavTilesBill
                         //insert record query
                         obj.getconnection();*/
 
-                        cmd = new SqlCommand("insert into tbl_newbill values(" + Convert.ToInt32(txtinvoiceno.Text) + ",'" + txtname.Text + "','" + txtaddress.Text + "','" + txtstate.Text + "','" + txtgstin.Text + "','" + txtcontact.Text + "','" + cmbpcompany.Text + "','" + txtpname.Text + "'," + Convert.ToInt32(txtbasicprice.Text) + "," + Convert.ToInt32(txtsgst.Text) + "," + Convert.ToInt32(txtcgst.Text) + "," + Convert.ToInt32(txtdiscount.Text) + "," + Convert.ToInt32(txttotal.Text) + "," + Convert.ToInt32(txtreceived.Text) + "," + Convert.ToInt32(txtpending.Text) + ",'" + dateTimePicker1.Value.Date.ToString("dd/MM/yyyy") + "','" + txttransname.Text + "','" + txtvehicalno.Text + "','" + txtplaceofsupply.Text + "')", obj.con);
+                        cmd = new SqlCommand("insert into tbl_newbill values('" + txtinvoiceno.Text + "','" + txtname.Text + "','" + txtaddress.Text + "','" + txtstate.Text + "','" + txtgstin.Text + "','" + txtcontact.Text + "','" + cmbpcompany.Text + "','" + txtpname.Text + "'," + Convert.ToInt32(txtbasicprice.Text) + "," + Convert.ToDouble(txtsgst.Text) + "," + Convert.ToDouble(txtcgst.Text) + "," + Convert.ToInt32(txtdiscount.Text) + "," + Convert.ToInt32(txttotal.Text) + "," + Convert.ToInt32(txtreceived.Text) + "," + Convert.ToInt32(txtpending.Text) + ",'" + dateTimePicker1.Value.Date.ToString("dd/MM/yyyy") + "','" + txttransname.Text + "','" + txtvehicalno.Text + "','" + txtplaceofsupply.Text + "')", obj.con);
                         int result =  cmd.ExecuteNonQuery();
                         if(result > 0)
                         {
@@ -241,7 +280,7 @@ namespace MadhavTilesBill
                             
                             //fillgrid();
 
-                            getinvoicenoforcryrpt.strinvoiceno = Convert.ToInt32(txtinvoiceno.Text);
+                            getinvoicenoforcryrpt.strinvoiceno = txtinvoiceno.Text;
 
                             clearall();
 

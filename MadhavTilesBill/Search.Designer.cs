@@ -161,7 +161,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bunifuCustomDataGrid1.DefaultCellStyle = dataGridViewCellStyle3;
-            //this.bunifuCustomDataGrid1.DoubleBuffered = true;
+            this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.Blue;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
@@ -350,7 +350,7 @@
             this.btnsearchno.IdleFillColor = System.Drawing.Color.White;
             this.btnsearchno.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnsearchno.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnsearchno.Location = new System.Drawing.Point(262, 18);
+            this.btnsearchno.Location = new System.Drawing.Point(324, 18);
             this.btnsearchno.Margin = new System.Windows.Forms.Padding(5);
             this.btnsearchno.Name = "btnsearchno";
             this.btnsearchno.Size = new System.Drawing.Size(111, 41);
@@ -412,7 +412,7 @@
             this.txtinvoicenosearch.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.txtinvoicenosearch.Location = new System.Drawing.Point(142, 20);
             this.txtinvoicenosearch.Name = "txtinvoicenosearch";
-            this.txtinvoicenosearch.Size = new System.Drawing.Size(100, 41);
+            this.txtinvoicenosearch.Size = new System.Drawing.Size(174, 41);
             this.txtinvoicenosearch.TabIndex = 1;
             // 
             // label1

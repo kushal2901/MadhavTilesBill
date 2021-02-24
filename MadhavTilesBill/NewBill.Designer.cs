@@ -586,7 +586,6 @@
             this.txtpending.Name = "txtpending";
             this.txtpending.Size = new System.Drawing.Size(210, 41);
             this.txtpending.TabIndex = 19;
-            
             // 
             // lblprnding
             // 
@@ -604,7 +603,7 @@
             this.txtinvoiceno.Location = new System.Drawing.Point(188, 3);
             this.txtinvoiceno.Name = "txtinvoiceno";
             this.txtinvoiceno.ReadOnly = true;
-            this.txtinvoiceno.Size = new System.Drawing.Size(127, 41);
+            this.txtinvoiceno.Size = new System.Drawing.Size(190, 41);
             this.txtinvoiceno.TabIndex = 21;
             // 
             // lblinvoiceno

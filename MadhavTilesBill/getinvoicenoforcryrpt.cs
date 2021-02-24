@@ -8,6 +8,6 @@ namespace MadhavTilesBill
 {
     class getinvoicenoforcryrpt
     {
-        public static int strinvoiceno = 0;
+        public static string strinvoiceno = "0";
     }
 }

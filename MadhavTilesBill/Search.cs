@@ -86,7 +86,7 @@ namespace MadhavTilesBill
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where invoiceno = " + Convert.ToInt32(txtinvoicenosearch.Text) + "", obj.con);
+                    cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where invoiceno = '" + txtinvoicenosearch.Text + "'", obj.con);
                     cmd.ExecuteNonQuery();
                     dt = new DataTable();
                     sda = new SqlDataAdapter(cmd);
@@ -190,7 +190,7 @@ namespace MadhavTilesBill
                     {
                         string selected_invoiceno = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
 
-                        cmd = new SqlCommand("delete from tbl_newbill where invoiceno = " + Convert.ToInt32(selected_invoiceno) + "", obj.con);
+                        cmd = new SqlCommand("delete from tbl_newbill where invoiceno = '" + selected_invoiceno + "'", obj.con);
                         int count = cmd.ExecuteNonQuery();
 
                         if (count > 0)

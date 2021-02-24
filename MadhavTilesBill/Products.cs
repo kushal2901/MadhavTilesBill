@@ -265,6 +265,19 @@ namespace MadhavTilesBill
             }
         }
 
-        
+        private void piccloseproduct_MouseHover(object sender, EventArgs e)
+        {
+            piccloseproduct.BackColor = System.Drawing.Color.White;
+        }
+
+        private void picmaximizeproduct_MouseHover(object sender, EventArgs e)
+        {
+            picmaximizeproduct.BackColor = System.Drawing.Color.White;
+        }
+
+        private void picminimizeproduct_MouseHover(object sender, EventArgs e)
+        {
+            picminimizeproduct.BackColor = System.Drawing.Color.White;
+        }
     }
 }

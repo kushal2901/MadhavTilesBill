@@ -61,7 +61,7 @@ namespace MadhavTilesBill
         {
             obj.getconnection();
             //cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',billdate as 'Billdate' from tbl_newbill order by invoiceno asc", obj.con);
-            cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport,vehno as 'VehNo.',placeofsupply as 'Place' from tbl_newbill where invoiceno = "+Convert.ToInt32(txtubinvoiceno.Text)+"", obj.con);
+            cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'VehNo',placeofsupply as 'Place' from tbl_newbill where invoiceno = '"+txtubinvoiceno.Text+"'", obj.con);
             dr = cmd.ExecuteReader();
             dt = new DataTable();
             dt.Load(dr);
@@ -108,12 +108,21 @@ namespace MadhavTilesBill
             //cmbubpcompany.SelectedIndex = -1;
             cmbubpcompany.Text = "";
             txtubpname.Clear();
+            //txtubproductname1.Text = "";
+            //txtubqtyinbox.Text = "";
+            //txtubrateperbox.Text = "";
+            //txtubtotalperbox.Text = "";
             txtubbasicprice.Clear();
             txtubsgst.Clear();
             txtubcgst.Clear();
             txtubdiscount.Clear();
             txtubtotal.Clear();
             txtubreceived.Clear();
+            txtubtransname.Clear();
+            txtubvehicalno.Clear();
+            txtubplaceofsupply.Clear();
+            txtubgstin.Clear();
+            
         }
 
         private void btnupdate_Click(object sender, EventArgs e)
@@ -175,12 +184,13 @@ namespace MadhavTilesBill
             {
                 MessageBox.Show("Date Field is Empty");
             }
+            
             else
             {
                 try
                 {
                     obj.getconnection();
-                    cmd = new SqlCommand("update tbl_newbill set name = '" + txtubname.Text + "',address = '" + txtubaddress.Text + "',state = '" + txtubstate.Text + "',customergstin = '"+txtubgstin.Text+"',contact = '" + txtubcontact.Text + "',pcompany = '" + cmbubpcompany.Text + "',pname = '" + txtubpname.Text + "',basicprice = " + Convert.ToInt32(txtubbasicprice.Text) + ",sgst = " + Convert.ToInt32(txtubsgst.Text) + ",cgst = " + Convert.ToInt32(txtubcgst.Text) + ",discount = " + Convert.ToInt32(txtubdiscount.Text) + ",total = " + Convert.ToInt32(txtubtotal.Text) + ",received = " + Convert.ToInt32(txtubreceived.Text) + ",pending = "+Convert.ToInt32(txtubpending.Text)+",billdate = '" + dateTimePicker1.Value.Date.ToString() + "',transname = '"+txtubtransname.Text+"',vehno = '"+txtubvehicalno.Text+"',placeofsupply = '"+txtubplaceofsupply.Text+"' where invoiceno = "+Convert.ToInt32(txtubinvoiceno.Text)+"", obj.con);
+                    cmd = new SqlCommand("update tbl_newbill set name = '" + txtubname.Text + "',address = '" + txtubaddress.Text + "',state = '" + txtubstate.Text + "',customergstin = '"+txtubgstin.Text+"',contact = '" + txtubcontact.Text + "',pcompany = '" + cmbubpcompany.Text + "',pname = '" + txtubpname.Text + "',basicprice = " + Convert.ToInt32(txtubbasicprice.Text) + ",sgst = " + Convert.ToDouble(txtubsgst.Text) + ",cgst = " + Convert.ToDouble(txtubcgst.Text) + ",discount = " + Convert.ToInt32(txtubdiscount.Text) + ",total = " + Convert.ToInt32(txtubtotal.Text) + ",received = " + Convert.ToInt32(txtubreceived.Text) + ",pending = "+Convert.ToInt32(txtubpending.Text)+",billdate = '" + dateTimePicker1.Value.Date.ToString("dd/MM/yyyy") + "',transname = '"+txtubtransname.Text+"',vehno = '"+txtubvehicalno.Text+"',placeofsupply = '"+txtubplaceofsupply.Text+"' where invoiceno = '"+txtubinvoiceno.Text+"'", obj.con);
                     /*cmd.ExecuteNonQuery();
                     sda = new SqlDataAdapter(cmd);
                     dt = new DataTable();
@@ -188,6 +198,7 @@ namespace MadhavTilesBill
                     int result = cmd.ExecuteNonQuery();
                     if(result > 0)
                     {
+                       
                         MessageBox.Show("Bill Record Update Success...", "Update Bill", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         fillgrid();
                         clearall();
@@ -438,6 +449,16 @@ namespace MadhavTilesBill
             {
                 productnameadd();
                 basicpricecalculation();
+                txtubproductname1.Text = "";
+                txtubqtyinbox.Text = "";
+                txtubrateperbox.Text = "";
+                txtubtotalperbox.Text = "";
+
+                if (txtubtotal.Text != "" && txtubreceived.Text != "")
+                {
+                    float total = float.Parse(txtubtotal.Text) - float.Parse(txtubreceived.Text);
+                    txtubpending.Text = total.ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -463,7 +484,9 @@ namespace MadhavTilesBill
                 }
                 else if (txtubqtyinbox.Text == "")
                 {
-                    MessageBox.Show("Please Enter Qty In Box Value");
+                    //MessageBox.Show("Please Enter Qty In Box Value");
+                    txtubrateperbox.Text = "";
+                    txtubtotalperbox.Text = "";
                 }
             }
             catch (Exception ex)
@@ -490,7 +513,9 @@ namespace MadhavTilesBill
                 }
                 else if (txtubqtyinbox.Text == "")
                 {
-                    MessageBox.Show("Please Enter Qty In Box Value");
+                    txtubrateperbox.Text = "";
+                    txtubtotalperbox.Text = "";
+                    //MessageBox.Show("Please Enter Qty In Box Value");
                 }
             }
             catch (Exception ex)
