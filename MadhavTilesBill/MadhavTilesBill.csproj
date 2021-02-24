@@ -243,5 +243,17 @@
   <ItemGroup>
     <None Include="Resources\icons8-eye-96.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60022.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19197148.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modern-abstract-blue-gradient-background_105555-119.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

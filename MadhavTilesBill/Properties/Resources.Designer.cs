@@ -63,6 +63,26 @@ namespace MadhavTilesBill.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _19197148 {
+            get {
+                object obj = ResourceManager.GetObject("19197148", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _60022 {
+            get {
+                object obj = ResourceManager.GetObject("60022", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _61728 {
             get {
                 object obj = ResourceManager.GetObject("61728", resourceCulture);
@@ -76,6 +96,16 @@ namespace MadhavTilesBill.Properties {
         internal static System.Drawing.Bitmap close_window {
             get {
                 object obj = ResourceManager.GetObject("close-window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace MadhavTilesBill.Properties {
         internal static System.Drawing.Bitmap minimize_window__1_ {
             get {
                 object obj = ResourceManager.GetObject("minimize-window (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modern_abstract_blue_gradient_background_105555_119 {
+            get {
+                object obj = ResourceManager.GetObject("modern-abstract-blue-gradient-background_105555-119", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
