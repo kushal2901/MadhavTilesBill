@@ -53,6 +53,12 @@ namespace MadhavTilesBill
 
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+
+            dtpto.Format = DateTimePickerFormat.Custom;
+            dtpto.CustomFormat = "dd/MM/yyyy";
+
+            dtpfrom.Format = DateTimePickerFormat.Custom;
+            dtpfrom.CustomFormat = "dd/MM/yyyy";
         }
 
         private void Search_Load(object sender, EventArgs e)
@@ -120,6 +126,7 @@ namespace MadhavTilesBill
             {
                 try
                 {
+                    
                     obj.getconnection();
                     cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where billdate between '" + dateTimePicker1.Value.Date.ToString("dd/MM/yyyy")+"' and '"+dateTimePicker2.Value.Date.ToString("dd/MM/yyyy")+"' ", obj.con);
                     cmd.ExecuteNonQuery();
@@ -128,6 +135,7 @@ namespace MadhavTilesBill
                     sda.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
+                        
                         bunifuCustomDataGrid1.DataSource = dt;
                         //btndelete.Enabled = true;
                         totalbillandsales();
@@ -372,6 +380,62 @@ namespace MadhavTilesBill
                 obj.closeconnection();
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btndatedownload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                obj.getconnection();
+                cmd = new SqlCommand("select invoiceno as 'Invoice No',name as 'Name',address as 'Address',state as 'State',customergstin as 'GSTIN',contact as 'Contact',pcompany as 'Company',pname as 'Pro Name ',basicprice as 'basicPrice',sgst as 'Sgst',cgst as 'Cgst',discount as 'Discount',total as 'Total',received as 'Received',pending as 'Pending',billdate as 'Billdate',transname as 'Transport',vehno as 'Veh No',placeofsupply as 'Place' from tbl_newbill where billdate between '" + dtpto.Value.Date.ToString("dd/MM/yyyy") + "' and '" + dtpfrom.Value.Date.ToString("dd/MM/yyyy") + "' ", obj.con);
+                dt = new DataTable();
+                sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Title = "Save Excel Sheet";
+                    saveFileDialog1.Filter = "Excel Files|*.xlsx|All files|*.*";
+                    saveFileDialog1.FileName = "ExcelSheet_" + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
+
+                    ExcelPackage exlpkg = new ExcelPackage();
+
+                    var Worksheet = exlpkg.Workbook.Worksheets.Add("Worksheet");
+
+
+
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        Worksheet.Cells[1, i + 1].Value = dt.Columns[i].ColumnName.ToString();
+
+                    }
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            Worksheet.Cells[i + 2, j + 1].Value = dt.Rows[i][j].ToString();
+                        }
+                    }
+                    byte[] bin = exlpkg.GetAsByteArray();
+
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllBytes(saveFileDialog1.FileName, bin);
+                        MessageBox.Show("Save Data Successfully", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                    {
+
+                    }
+                }
+                obj.closeconnection();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

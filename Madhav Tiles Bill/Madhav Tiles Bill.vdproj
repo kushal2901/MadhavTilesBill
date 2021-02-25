@@ -100,7 +100,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_63A1C88917B11626D32FE23D126B8E5F"
+        "OwnerKey" = "8:_7804191C879E3C0B9EB4014CC18432D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -130,12 +130,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7804191C879E3C0B9EB4014CC18432D7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_13FCFD1860D559C6B5A97AA51A3C5B60"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -157,6 +151,12 @@
         "OwnerKey" = "8:_D2BB28CB570E20FC268C28529E8BB05F"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_63A1C88917B11626D32FE23D126B8E5F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -175,6 +175,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -191,6 +207,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -596,7 +620,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Madhav Tiles Bill"
         "ProductCode" = "8:{B17DBC37-E528-42F8-BC9C-A398CB37092A}"
-        "PackageCode" = "8:{9D6E7E54-B722-4FBD-95DF-3496899FBFFC}"
+        "PackageCode" = "8:{0D601319-A12B-44F7-BCEE-02B84A7C4278}"
         "UpgradeCode" = "8:{A14EFFD8-1486-4B92-80B8-B54C4016C545}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

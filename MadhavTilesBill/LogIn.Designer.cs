@@ -143,7 +143,6 @@
             this.panel364864.Name = "panel364864";
             this.panel364864.Size = new System.Drawing.Size(533, 753);
             this.panel364864.TabIndex = 1;
-            
             // 
             // picshowpasslg
             // 
@@ -211,7 +210,7 @@
             // txtpassword
             // 
             this.txtpassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtpassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtpassword.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.ForeColor = System.Drawing.Color.White;
             this.txtpassword.HintForeColor = System.Drawing.Color.White;
             this.txtpassword.HintText = "";
@@ -219,7 +218,7 @@
             this.txtpassword.LineFocusedColor = System.Drawing.Color.Teal;
             this.txtpassword.LineIdleColor = System.Drawing.Color.Gray;
             this.txtpassword.LineMouseHoverColor = System.Drawing.Color.Teal;
-            this.txtpassword.LineThickness = 3;
+            this.txtpassword.LineThickness = 4;
             this.txtpassword.Location = new System.Drawing.Point(77, 377);
             this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtpassword.Name = "txtpassword";
@@ -246,7 +245,7 @@
             // 
             this.txtusername.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.txtusername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtusername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtusername.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusername.ForeColor = System.Drawing.Color.White;
             this.txtusername.HintForeColor = System.Drawing.Color.White;
             this.txtusername.HintText = "";
@@ -254,7 +253,7 @@
             this.txtusername.LineFocusedColor = System.Drawing.Color.Teal;
             this.txtusername.LineIdleColor = System.Drawing.Color.Gray;
             this.txtusername.LineMouseHoverColor = System.Drawing.Color.Teal;
-            this.txtusername.LineThickness = 3;
+            this.txtusername.LineThickness = 4;
             this.txtusername.Location = new System.Drawing.Point(78, 263);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4);
             this.txtusername.Name = "txtusername";

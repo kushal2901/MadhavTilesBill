@@ -58,6 +58,10 @@
             this.picmaximizesearch = new System.Windows.Forms.PictureBox();
             this.picminimizesearch = new System.Windows.Forms.PictureBox();
             this.picclosesearch = new System.Windows.Forms.PictureBox();
+            this.dtpto = new System.Windows.Forms.DateTimePicker();
+            this.btndatedownload = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.dtpfrom = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
@@ -190,12 +194,16 @@
             // 
             this.panel2.AutoSize = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dtpto);
+            this.panel2.Controls.Add(this.btndatedownload);
+            this.panel2.Controls.Add(this.dtpfrom);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnupdate);
             this.panel2.Controls.Add(this.btndownloadedata);
             this.panel2.Controls.Add(this.btndelete);
             this.panel2.Location = new System.Drawing.Point(-1, 102);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1529, 53);
+            this.panel2.Size = new System.Drawing.Size(1529, 54);
             this.panel2.TabIndex = 40;
             // 
             // btnupdate
@@ -242,7 +250,7 @@
             this.btndownloadedata.IdleFillColor = System.Drawing.Color.White;
             this.btndownloadedata.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btndownloadedata.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btndownloadedata.Location = new System.Drawing.Point(1150, 5);
+            this.btndownloadedata.Location = new System.Drawing.Point(1209, 3);
             this.btndownloadedata.Margin = new System.Windows.Forms.Padding(5);
             this.btndownloadedata.Name = "btndownloadedata";
             this.btndownloadedata.Size = new System.Drawing.Size(219, 41);
@@ -501,6 +509,62 @@
             this.picclosesearch.TabStop = false;
             this.picclosesearch.Click += new System.EventHandler(this.picclosesearch_Click);
             // 
+            // dtpto
+            // 
+            this.dtpto.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpto.Location = new System.Drawing.Point(537, 10);
+            this.dtpto.Name = "dtpto";
+            this.dtpto.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpto.Size = new System.Drawing.Size(163, 36);
+            this.dtpto.TabIndex = 32;
+            // 
+            // btndatedownload
+            // 
+            this.btndatedownload.ActiveBorderThickness = 1;
+            this.btndatedownload.ActiveCornerRadius = 1;
+            this.btndatedownload.ActiveFillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btndatedownload.ActiveForecolor = System.Drawing.Color.White;
+            this.btndatedownload.ActiveLineColor = System.Drawing.Color.MediumSeaGreen;
+            this.btndatedownload.BackColor = System.Drawing.Color.White;
+            this.btndatedownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndatedownload.BackgroundImage")));
+            this.btndatedownload.ButtonText = "Download";
+            this.btndatedownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btndatedownload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndatedownload.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btndatedownload.IdleBorderThickness = 1;
+            this.btndatedownload.IdleCornerRadius = 1;
+            this.btndatedownload.IdleFillColor = System.Drawing.Color.White;
+            this.btndatedownload.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btndatedownload.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btndatedownload.Location = new System.Drawing.Point(955, 6);
+            this.btndatedownload.Margin = new System.Windows.Forms.Padding(5);
+            this.btndatedownload.Name = "btndatedownload";
+            this.btndatedownload.Size = new System.Drawing.Size(130, 41);
+            this.btndatedownload.TabIndex = 35;
+            this.btndatedownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btndatedownload.Click += new System.EventHandler(this.btndatedownload_Click);
+            // 
+            // dtpfrom
+            // 
+            this.dtpfrom.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfrom.Location = new System.Drawing.Point(758, 10);
+            this.dtpfrom.Name = "dtpfrom";
+            this.dtpfrom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpfrom.Size = new System.Drawing.Size(163, 36);
+            this.dtpfrom.TabIndex = 33;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(711, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 32);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "To";
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -528,6 +592,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picmaximizesearch)).EndInit();
@@ -566,5 +631,9 @@
         private System.Windows.Forms.PictureBox picminimizesearch;
         private System.Windows.Forms.PictureBox picclosesearch;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private System.Windows.Forms.DateTimePicker dtpto;
+        private Bunifu.Framework.UI.BunifuThinButton2 btndatedownload;
+        private System.Windows.Forms.DateTimePicker dtpfrom;
+        private System.Windows.Forms.Label label4;
     }
 }

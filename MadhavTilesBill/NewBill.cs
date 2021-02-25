@@ -219,10 +219,10 @@ namespace MadhavTilesBill
                 MessageBox.Show("Contact Field is Empty");
             }
            
-            else if (cmbpcompany.Text == "")
+            /*else if (cmbpcompany.Text == "")
             {
                 MessageBox.Show("Product Name Field is Empty");
-            }
+            }*/
             else if (txtpname.Text == "")
             {
                 MessageBox.Show("Product Name Field is Empty");
